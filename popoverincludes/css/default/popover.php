@@ -1,7 +1,12 @@
 <div id='<?php echo $popover_messagebox; ?>' class='visiblebox' style='<?php echo $style; ?>'>
 	<a href='' id='closebox' title='Close this box'></a>
 	<div id='message' style='<?php echo $box; ?>'>
-		<?php echo do_shortcode($popover_content); ?>
+		<?php 
+		$content = do_shortcode($popover_content);
+		$content = apply_filters('the_content', $content);
+		$content = str_replace(']]>', ']]&gt;', $content);
+		echo $content; 
+		?>
 		<div class='clear'></div>
 		<?php if($popover_hideforever != 'yes') {
 			?>

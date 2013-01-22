@@ -6,10 +6,10 @@ function set_popover_url($base) {
 
 	if(defined('WPMU_PLUGIN_URL') && defined('WPMU_PLUGIN_DIR') && file_exists(WPMU_PLUGIN_DIR . '/' . basename($base))) {
 		$popover_url = trailingslashit(WPMU_PLUGIN_URL);
-	} elseif(defined('WP_PLUGIN_URL') && defined('WP_PLUGIN_DIR') && file_exists(WP_PLUGIN_DIR . '/wordpress-popup/' . basename($base))) {
-		$popover_url = trailingslashit(WP_PLUGIN_URL . '/wordpress-popup');
+	} elseif(defined('WP_PLUGIN_URL') && defined('WP_PLUGIN_DIR') && file_exists(WP_PLUGIN_DIR . '/new-wordpress-popup/' . basename($base))) {
+		$popover_url = trailingslashit(WP_PLUGIN_URL . '/new-wordpress-popup');
 	} else {
-		$popover_url = trailingslashit(WP_PLUGIN_URL . '/wordpress-popup');
+		$popover_url = trailingslashit(WP_PLUGIN_URL . '/new-wordpress-popup');
 	}
 
 }
@@ -20,10 +20,10 @@ function set_popover_dir($base) {
 
 	if(defined('WPMU_PLUGIN_DIR') && file_exists(WPMU_PLUGIN_DIR . '/' . basename($base))) {
 		$popover_dir = trailingslashit(WPMU_PLUGIN_URL);
-	} elseif(defined('WP_PLUGIN_DIR') && file_exists(WP_PLUGIN_DIR . '/wordpress-popup/' . basename($base))) {
-		$popover_dir = trailingslashit(WP_PLUGIN_DIR . '/wordpress-popup');
+	} elseif(defined('WP_PLUGIN_DIR') && file_exists(WP_PLUGIN_DIR . '/new-wordpress-popup/' . basename($base))) {
+		$popover_dir = trailingslashit(WP_PLUGIN_DIR . '/new-wordpress-popup');
 	} else {
-		$popover_dir = trailingslashit(WP_PLUGIN_DIR . '/wordpress-popup');
+		$popover_dir = trailingslashit(WP_PLUGIN_DIR . '/new-wordpress-popup');
 	}
 
 

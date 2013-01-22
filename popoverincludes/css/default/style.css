@@ -28,6 +28,8 @@ div#messagebox div.claimbutton a:visited, div#messagebox div.claimbutton a {
 #message p {
 	position: relative;
 	clear: both;
+	text-align: justify;
+	padding: 0 1em;
 }
 
 #messagebox #closebox {

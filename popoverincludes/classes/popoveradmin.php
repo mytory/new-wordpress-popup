@@ -29,7 +29,7 @@ if(!class_exists('popoveradmin')) {
 
 			// Add header files
 			add_action('load-toplevel_page_popover', array(&$this, 'add_admin_header_popover_menu'));
-			add_action('load-pop-overs_page_popoveraddons', array(&$this, 'add_admin_header_popover_addons'));
+			//add_action('load-pop-overs_page_popoveraddons', array(&$this, 'add_admin_header_popover_addons'));
 
 			// Ajax calls
 			add_action( 'wp_ajax_popover_update_order', array(&$this, 'ajax_update_popover_order') );
@@ -106,7 +106,7 @@ if(!class_exists('popoveradmin')) {
 			}
 
 			$addnew = add_submenu_page('popover', __('Create New Pop Over','popover'), __('Create New','popover'), 'manage_options', "popover&amp;action=add", array(&$this,'handle_addnewpopover_panel'));
-			add_submenu_page('popover', __('Manage Add-ons Plugins','popover'), __('Add-ons','popover'), 'manage_options', "popoveraddons", array(&$this,'handle_addons_panel'));
+			//add_submenu_page('popover', __('Manage Add-ons Plugins','popover'), __('Add-ons','popover'), 'manage_options', "popoveraddons", array(&$this,'handle_addons_panel'));
 
 		}
 
@@ -980,7 +980,7 @@ if(!class_exists('popoveradmin')) {
 
 								<label for='popovercontent'><?php _e('Popover content','popover'); ?></label><br/>
 								<?php
-								$args = array("textarea_name" => "popover_content", "textarea_rows" => 5);
+								$args = array("textarea_name" => "popover_content", "textarea_rows" => 20);
 								wp_editor( stripslashes($popover_content), "popover_content", $args );
 								/*
 								?>
@@ -1041,7 +1041,7 @@ if(!class_exists('popoveradmin')) {
 									?>
 								</div>
 								<div id='positive-rules' class='droppable-rules popovers-sortable'>
-									<?php _e('Drop here','membership'); ?>
+									<?php _e('Drop here','popover'); ?>
 								</div>
 
 								<h3><?php _e('Appearance settings','popover'); ?></h3>
@@ -1540,7 +1540,7 @@ if(!class_exists('popoveradmin')) {
 
 				<h3><?php _e('Pop Over content','popover'); ?></h3>
 				<p><?php _e('Enter the content for your pop over in the text area below. HTML is allowed.','popover'); ?></p>
-				<textarea name='popovercontent' id='popovercontent' style='width: 90%' rows='10' cols='10'><?php echo stripslashes($popover_content); ?></textarea>
+				<textarea name='popovercontent' id='popovercontent' style='width: 90%' rows='20' cols='10'><?php echo stripslashes($popover_content); ?></textarea>
 
 				<p class="submit">
 				<input class="button" type="submit" name="go" value="<?php _e('Update content', 'popover'); ?>" />
