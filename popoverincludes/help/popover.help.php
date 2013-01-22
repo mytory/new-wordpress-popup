@@ -1,7 +1,7 @@
 <h2><?php _e('Introduction','popover'); ?></h2>
 <p><?php _e('The main Pop Over screen show all of the Pop Overs you have set up, you can edit, activate / deactivate and reorder the priority of the Pop Overs using this screen.','popover'); ?></p>
 <h2><?php _e('Adding a Pop Over','popover'); ?></h2>
-<p><?php _e('To add a Pop Over you can either click on the <strong>Add New</strong> link near the top of the page, or click on the <strong>Create New</strong> menu item in the main Popover menu.','pop Over'); ?></p>
+<p><?php _e('To add a Pop Over you can either click on the <strong>Add New</strong> link near the top of the page, or click on the <strong>Create New</strong> menu item in the main Popover menu.','popover'); ?></p>
 <h2><?php _e('Activating / Deactivating a Popover','popover'); ?></h2>
 <p><?php _e('If you find that you do not need a particular Pop Over for a period of time, but want to keep it for later use, then clicking on the Deactivate link underneath the Pop Overs title will ensure the Pop Over is not included in the processing.','popover'); ?></p>
 <p><?php popover_helpimage('popoverdeactivate.png'); ?></p>
