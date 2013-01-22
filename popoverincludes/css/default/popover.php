@@ -2,10 +2,14 @@
 	<a href='' id='closebox' title='Close this box'></a>
 	<div id='message' style='<?php echo $box; ?>'>
 		<?php 
-		$content = do_shortcode($popover_content);
-		$content = apply_filters('the_content', $content);
-		$content = str_replace(']]>', ']]&gt;', $content);
-		echo $content; 
+		$popover_content = do_shortcode($popover_content);
+		$popover_content = wptexturize($popover_content);
+		$popover_content = convert_smilies($popover_content);
+		$popover_content = convert_chars($popover_content);
+		$popover_content = wpautop($popover_content);
+		$popover_content = shortcode_unautop($popover_content);
+		$popover_content = prepend_attachment($popover_content);
+		echo $popover_content;
 		?>
 		<div class='clear'></div>
 		<?php if($popover_hideforever != 'yes') {
