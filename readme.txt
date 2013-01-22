@@ -1,8 +1,8 @@
-=== WordPress PopUp ===
+=== New WordPress PopUp ===
 Contributors: WPMUDEV
 Tags: buddypress, wpmu, wpmu plugin, buddypress plugin, making money, seo, Advertising, multisite, Advertising
 Requires at least: 3.1
-Tested up to: 3.3.2
+Tested up to: 3.5
 Stable tag: 4.3.2
 
 Allows you to display a fancy popup (powered as a popover!) to visitors sitewide or per blog, a *very* effective way of advertising a mailing list, special offer or running a plain old ad.
