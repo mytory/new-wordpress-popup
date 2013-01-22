@@ -1,5 +1,5 @@
 === New WordPress PopUp ===
-Contributors: WPMUDEV
+Contributors: WPMUDEV, mytory
 Tags: buddypress, wpmu, wpmu plugin, buddypress plugin, making money, seo, Advertising, multisite, Advertising
 Requires at least: 3.1
 Tested up to: 3.5
