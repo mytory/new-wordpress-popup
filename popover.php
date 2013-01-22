@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: new WordPress PopUp
+Plugin Name: New WordPress PopUp
 Description: Allows you to display a fancy popup (powered as a popover!) to visitors sitewide or per blog, a *very* effective way of advertising a mailing list, special offer or running a plain old ad. 이 플러그인은 http://premium.wpmudev.org 의 플러그인을 mytory가 수정한 것입니다. 무료 WordPress PopUp은 더이상 업데이트되지 않고 있습니다. wpmudev는 WordPress PopUp을 [Pop Up!](http://premium.wpmudev.org/project/the-pop-over-plugin/)으로 변경하여 19$에 판매하고 있습니다.
-Author: Barry, mytory
+Author: Barry (Incsub), mytory
 Version: 4.3.2
 
 Copyright 2007-2010 Incsub (http://incsub.com)
