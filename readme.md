@@ -70,13 +70,13 @@ For network wide control - add the line define('PO_GLOBAL', true); to your wp-co
 ## Screenshots ##
 
 ###1. The PopUp in action###
-![The PopUp in action](http://s.wordpress.org/extend/plugins/new-wordpress-popup/screenshot-1.png)
+![The PopUp in action](https://raw.github.com/mytory/new-wordpress-popup/master/screenshot-1.png)
 
 ###2. PopUp produces double the number of pages and twice the length of stay compared to visitors that come via Adwords###
-![PopUp produces double the number of pages and twice the length of stay compared to visitors that come via Adwords](http://s.wordpress.org/extend/plugins/new-wordpress-popup/screenshot-2.png)
+![PopUp produces double the number of pages and twice the length of stay compared to visitors that come via Adwords](https://raw.github.com/mytory/new-wordpress-popup/master/screenshot-2.png)
 
 ###3. Some of the settings options###
-![Some of the settings options](http://s.wordpress.org/extend/plugins/new-wordpress-popup/screenshot-3.png)
+![Some of the settings options](https://raw.github.com/mytory/new-wordpress-popup/master/screenshot-3.png)
 
 
 ## Changelog ##
