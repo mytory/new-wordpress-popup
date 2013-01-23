@@ -88,3 +88,6 @@ div#messagebox.hiddenbox {
 .clear {
 	clear: both;
 }
+.popover-content{
+	*display: inline;
+}
