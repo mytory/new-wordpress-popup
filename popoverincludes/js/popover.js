@@ -27,19 +27,15 @@ function showMessageBox() {
 }
 
 function newShowMessageBox() {
-
-
-
 }
 
 function boardReady() {
 	jQuery('#clearforever').click(removeMessageBoxForever);
-	jQuery('#closebox').click(removeMessageBox);
-
 	jQuery('#message').hover( function() {jQuery('.claimbutton').removeClass('hide');}, function() {jQuery('.claimbutton').addClass('hide');});
-
 	window.setTimeout( showMessageBox, popover.messagedelay );
-
 }
 
 jQuery(window).load(boardReady);
+jQuery(document).ready(function(){
+	jQuery('#closebox').click(removeMessageBox);
+});
