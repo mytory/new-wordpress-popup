@@ -1,6 +1,6 @@
-<div id='<?php echo $popover_messagebox; ?>' class='visiblebox' style='<?php echo $style; ?>'>
-	<a href='javascript: return false;' id='closebox' title='<?=__('Close this box','popover')?>'></a>
-	<div id='message' style='<?php echo $box; ?>'>
+<div id='<?php echo $popover_messagebox; ?>' data-id='<?=$popover->id?>' class='nwp-msgbox visiblebox' style='<?php echo $style; ?>'>
+	<a href='javascript: return false;' class='closebox' title='<?=__('Close this box','popover')?>'></a>
+	<div class='nwp-msg' style='<?php echo $box; ?>'>
 		<div class="popover-content"><?php 
 			$popover_content = do_shortcode($popover_content);
 			$popover_content = wptexturize($popover_content);
@@ -15,7 +15,7 @@
 		<div class='clear'></div>
 		<?php if($popover_hideforever != 'yes') {
 			?>
-			<div class='claimbutton hide'><a href='#' id='clearforever'><?php _e('Never see this message again.','popover'); ?></a></div>
+			<div class='claimbutton hide'><a href='#' class='clearforever'><?php _e('Never see this message again.','popover'); ?></a></div>
 			<?php
 		}
 		?>

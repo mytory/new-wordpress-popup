@@ -291,7 +291,7 @@ if(!class_exists('popoverajax')) {
 					ob_end_clean();
 
 					echo "<style type='text/css'>\n";
-					$content = str_replace('#messagebox', '#' . $popover_messagebox, $content);
+					$content = str_replace('.nwp-msgbox', '#' . $popover_messagebox, $content);
 					$content = str_replace('%styleurl%', trailingslashit($availablestylesurl[$popoverstyle]), $content);
 					echo $content;
 					echo "</style>\n";

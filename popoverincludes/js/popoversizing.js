@@ -1,9 +1,13 @@
 function sizeReady() {
-	jQuery(popover.messagebox).width(jQuery('.popover-content').width());
-	jQuery(popover.messagebox).height(jQuery('#message').height());
+    var $ = jQuery;
+    $('.visiblebox').each(function(){
+        $(this).width($('.popover-content').width());
+        $(this).height($('.nwp-msg').height());
 
-	jQuery(popover.messagebox).css('top', (jQuery(window).height() / 2) - (jQuery('#message').height() / 2) );
-	jQuery(popover.messagebox).css('left', (jQuery(window).width() / 2) - (jQuery('#message').width() / 2) );
+        $(this).css('top', ($(window).height() / 2) - ($('.nwp-msg').height() / 2) );
+        $(this).css('left', ($(window).width() / 2) - ($('.nwp-msg').width() / 2) );
+    });
+
 }
 
 jQuery(window).load(sizeReady);

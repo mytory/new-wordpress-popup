@@ -9,33 +9,43 @@ function createCookie(name,value,days) {
 }
 
 function removeMessageBoxForever() {
-	jQuery('#darkbackground').remove();
-	jQuery(this).parents(popover.messagebox).remove();
-	createCookie('popover_never_view', 'hidealways', 365);
+	var $ = jQuery;
+	$('#darkbackground').remove();
+	var id = $(this).parents('.visiblebox').data('id');
+	$(this).parents('.visiblebox').remove();
+	// createCookie('popover_never_view', 'hidealways', 365);
+	createCookie('popover-' + id, 'hidealways', 1);
 	return false;
 }
 
 function removeMessageBox() {
-	jQuery('#darkbackground').remove();
-	jQuery(this).parents(popover.messagebox).remove();
+	var $ = jQuery;
+	$('#darkbackground').remove();
+	$(this).parents('.visiblebox').remove();
 	return false;
 }
 
 function showMessageBox() {
-	jQuery(popover.messagebox).css('visibility', 'visible');
-	jQuery('#darkbackground').css('visibility', 'visible');
+	var $ = jQuery;
+	$('.visiblebox').css('visibility', 'visible');
+	$('#darkbackground').css('visibility', 'visible');
 }
 
 function newShowMessageBox() {
 }
 
 function boardReady() {
-	jQuery('#clearforever').click(removeMessageBoxForever);
-	jQuery('#message').hover( function() {jQuery('.claimbutton').removeClass('hide');}, function() {jQuery('.claimbutton').addClass('hide');});
+	var $ = jQuery;
+	$('.clearforever').click(removeMessageBoxForever);
+	$('.nwp-msg').hover( function() {
+		$(this).find('.claimbutton').removeClass('hide');
+	}, function() {
+		$(this).find('.claimbutton').addClass('hide');
+	});
 	window.setTimeout( showMessageBox, popover.messagedelay );
 }
 
 jQuery(window).load(boardReady);
 jQuery(document).ready(function(){
-	jQuery('#closebox').click(removeMessageBox);
+	jQuery('.closebox').click(removeMessageBox);
 });

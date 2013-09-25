@@ -223,7 +223,7 @@ if(!class_exists('popoverpublic')) {
 
 					if($show == true) {
 
-						if($this->clear_forever()) {
+						if($this->clear_forever($popover->id)) {
 							$show = false;
 						}
 
@@ -345,7 +345,7 @@ if(!class_exists('popoverpublic')) {
 
                     ob_start();
 					echo "<style type='text/css'>\n";
-					$content = str_replace('#messagebox', '#' . $popover_messagebox, $content);
+					$content = str_replace('.nwp-msgbox', '#' . $popover_messagebox, $content);
 					$content = str_replace('%styleurl%', trailingslashit($availablestylesurl[$popoverstyle]), $content);
 					echo $content;
 					echo "</style>\n";
@@ -538,8 +538,8 @@ if(!class_exists('popoverpublic')) {
 			return $wpdb->query( $wpdb->prepare( $sql, $data) );
 		}
 
-		function clear_forever() {
-			if ( isset($_COOKIE['popover_never_view']) ) {
+		function clear_forever($popover_id) {
+			if ( isset($_COOKIE['popover-' . $popover_id]) ) {
 				return true;
 			} else {
 				return false;
