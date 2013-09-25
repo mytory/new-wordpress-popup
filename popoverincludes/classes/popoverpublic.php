@@ -14,6 +14,9 @@ if(!class_exists('popoverpublic')) {
 
 		var $activepopover = false;
 
+        var $header_code = '';
+        var $footer_code = '';
+
 		function __construct() {
 
 			global $wpdb;
@@ -233,7 +236,7 @@ if(!class_exists('popoverpublic')) {
 
 						wp_enqueue_script('jquery');
 
-						$popover_messagebox = 'a' . md5(date('d')) . '-po';
+						$popover_messagebox = 'a' . $popover->id . '-po';
 						// Show the advert
 						wp_enqueue_script('popoverjs', popover_url('popoverincludes/js/popover.js'), array('jquery'), $this->build);
 						if(!empty($popover_delay) && $popover_delay != 'immediate') {
@@ -251,8 +254,8 @@ if(!class_exists('popoverpublic')) {
 							wp_enqueue_script('popoveroverridejs', popover_url('popoverincludes/js/popoversizing.js'), array('jquery'), $this->build);
 						}
 
-						add_action('wp_head', array(&$this, 'page_header'));
-						add_action('wp_footer', array(&$this, 'page_footer'));
+                        $this->header_code .= $this->page_header();
+                        $this->footer_code .= $this->page_footer();
 
 						// Add the cookie
 						if ( isset($_COOKIE['popover_view_'.COOKIEHASH]) ) {
@@ -262,17 +265,28 @@ if(!class_exists('popoverpublic')) {
 						} else {
 							$count = 1;
 						}
-						if(!headers_sent()) setcookie('popover_view_'.COOKIEHASH, $count , time() + 30000000, COOKIEPATH, COOKIE_DOMAIN);
+						if(!headers_sent()){
+                            setcookie('popover_view_'.COOKIEHASH, $count , time() + 30000000, COOKIEPATH, COOKIE_DOMAIN);
+                        }
 
-						break;
 					}
 
 
 				}
 
 			}
+            add_action('wp_head', array(&$this, 'echo_header_code'));
+            add_action('wp_footer', array(&$this, 'echo_footer_code'));
 
 		}
+
+        function echo_header_code(){
+            echo $this->header_code;
+        }
+
+        function echo_footer_code(){
+            echo $this->footer_code;
+        }
 
 		function sanitise_array($arrayin) {
 
@@ -316,7 +330,7 @@ if(!class_exists('popoverpublic')) {
 
 			$popover_delay = $popover->popover_settings['popoverdelay'];
 
-			$popover_messagebox = 'a' . md5(date('d')) . '-po';
+			$popover_messagebox = 'a' . $popover->id . '-po';
 
 			$availablestyles = apply_filters( 'popover_available_styles_directory', array() );
 			$availablestylesurl = apply_filters( 'popover_available_styles_url', array() );
@@ -325,18 +339,23 @@ if(!class_exists('popoverpublic')) {
 				// Add the styles
 				if(file_exists(trailingslashit($availablestyles[$popoverstyle]) . 'style.css')) {
 					ob_start();
-					include_once( trailingslashit($availablestyles[$popoverstyle]) . 'style.css' );
+					include( trailingslashit($availablestyles[$popoverstyle]) . 'style.css' );
 					$content = ob_get_contents();
 					ob_end_clean();
 
+                    ob_start();
 					echo "<style type='text/css'>\n";
 					$content = str_replace('#messagebox', '#' . $popover_messagebox, $content);
 					$content = str_replace('%styleurl%', trailingslashit($availablestylesurl[$popoverstyle]), $content);
 					echo $content;
 					echo "</style>\n";
+                    $return = ob_get_contents();
+                    ob_end_clean();
+                    return $return;
 				}
 
 			}
+            return '';
 
 		}
 
@@ -397,15 +416,17 @@ if(!class_exists('popoverpublic')) {
 			$availablestyles = apply_filters( 'popover_available_styles_directory', array() );
 
 			if( in_array($popoverstyle, array_keys($availablestyles)) ) {
-				$popover_messagebox = 'a' . md5(date('d')) . '-po';
+				$popover_messagebox = 'a' . $popover->id . '-po';
 
 				if(file_exists(trailingslashit($availablestyles[$popoverstyle]) . 'popover.php')) {
 					ob_start();
-					include_once( trailingslashit($availablestyles[$popoverstyle]) . 'popover.php' );
-					ob_end_flush();
+					include( trailingslashit($availablestyles[$popoverstyle]) . 'popover.php' );
+                    $content = ob_get_contents();
+                    ob_end_clean();
+                    return $content;
 				}
 			}
-
+            return '';
 
 		}
 
@@ -528,5 +549,3 @@ if(!class_exists('popoverpublic')) {
 	}
 
 }
-
-?>
