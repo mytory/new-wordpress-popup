@@ -29,6 +29,7 @@ div.nwp-msgbox div.claimbutton a:visited, div.nwp-msgbox div.claimbutton a {
 	position: relative;
 	clear: both;
 	text-align: justify;
+	margin-bottom: 0;
 }
 
 .nwp-msgbox .closebox {
@@ -43,7 +44,7 @@ div.nwp-msgbox div.claimbutton a:visited, div.nwp-msgbox div.claimbutton a {
 
 div.nwp-msg {
 	position: relative;
-	background: #fff;
+	background-color: rgba(0, 0, 0, 0.5);
 	font: 0.9em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	min-height: 90%;
 	overflow: hidden;
@@ -89,4 +90,9 @@ div.nwp-msgbox.hiddenbox {
 }
 .popover-content{
 	*display: inline;
+	padding: 1em;
+}
+
+.popover-content img {
+	margin: -1em;
 }

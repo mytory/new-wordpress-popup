@@ -1097,16 +1097,16 @@ if(!class_exists('popoveradmin')) {
 									<tr>
 										<th valign='top' scope='row' style='width: 25%;'><strong><?php _e('Background Color','popover'); ?></strong></th>
 										<td valign='top'>
-											<?php _e('Hex:','popover'); ?>&nbsp;#
-											<input type='text' name='popoverbackground' id='popoverbackground' style='width: 10em;' value='<?php echo $popover_colour['back']; ?>' />
+											<?php _e('Hex:','popover'); ?>
+											<input type='color' name='popoverbackground' id='popoverbackground' style='width: 10em;' value='<?php echo $popover_colour['back']; ?>' />
 										</td>
 									</tr>
 
 									<tr>
 										<th valign='top' scope='row' style='width: 25%;'><strong><?php _e('Font Color','popover'); ?></strong></th>
 										<td valign='top'>
-											<?php _e('Hex:','popover'); ?>&nbsp;#
-											<input type='text' name='popoverforeground' id='popoverforeground' style='width: 10em;' value='<?php echo $popover_colour['fore']; ?>' />
+											<?php _e('Hex:','popover'); ?>
+											<input type='color' name='popoverforeground' id='popoverforeground' style='width: 10em;' value='<?php echo $popover_colour['fore']; ?>' />
 										</td>
 									</tr>
 
@@ -1484,8 +1484,8 @@ if(!class_exists('popoveradmin')) {
 					$back = $_POST['popoverbackground'];
 					$fore = $_POST['popoverforeground'];
 
-					if($back == '') $back = 'FFFFFF';
-					if($fore == '') $fore = '000000';
+					if($back == '') $back = '#000000';
+					if($fore == '') $fore = '#ffffff';
 
 					$updateoption('popover_colour', array("back" => $back, "fore" => $fore));
 				}
