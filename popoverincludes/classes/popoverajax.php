@@ -339,13 +339,13 @@ if(!class_exists('popoverajax')) {
 
 			if($popover_usejs == 'yes') {
 				$style = 'z-index:999999;';
-				$box = 'color: ' . $popover_colour['fore'] . '; background: ' . $popover_colour['back'] . ';';
 				$style .= 'left: -1000px; top: =100px;';
+				$box = 'color: ' . $popover_colour['fore'] . '; background: ' . $popover_colour['back'] . ';';
+				$box .= 'padding-top: ' . $popover_margin['top'] . '; padding-bottom: ' . $popover_margin['bottom'] . '; padding-right: ' . $popover_margin['right'] . '; padding-left: ' . $popover_margin['left'] . ';';
 			} else {
 				$style =  'left: ' . $popover_location['left'] . '; top: ' . $popover_location['top'] . ';' . ' z-index:999999;';
-				$style .= 'margin-top: ' . $popover_margin['top'] . '; margin-bottom: ' . $popover_margin['bottom'] . '; margin-right: ' . $popover_margin['right'] . '; margin-left: ' . $popover_margin['left'] . ';';
-
 				$box = 'width: ' . $popover_size['width'] . '; height: ' . $popover_size['height'] . '; color: ' . $popover_colour['fore'] . '; background: ' . $popover_colour['back'] . ';';
+				$box .= 'padding-top: ' . $popover_margin['top'] . '; padding-bottom: ' . $popover_margin['bottom'] . '; padding-right: ' . $popover_margin['right'] . '; padding-left: ' . $popover_margin['left'] . ';';
 
 			}
 
