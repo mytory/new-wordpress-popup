@@ -112,6 +112,10 @@ if(!class_exists('popoveradmin')) {
 
 		function sanitise_array($arrayin) {
 
+		    if (!is_array($arrayin)) {
+		        return $arrayin;
+            }
+
 			foreach( (array) $arrayin as $key => $value) {
 				$arrayin[$key] = htmlentities(stripslashes($value) ,ENT_QUOTES, 'UTF-8');
 			}
@@ -383,7 +387,7 @@ if(!class_exists('popoveradmin')) {
 
 		function get_popovers() {
 
-			$sql = $this->db->prepare( "SELECT * FROM {$this->popover} ORDER BY popover_order ASC" ,'');
+			$sql = "SELECT * FROM {$this->popover} ORDER BY popover_order ASC";
 
 			return $this->db->get_results( $sql );
 
@@ -965,7 +969,7 @@ if(!class_exists('popoveradmin')) {
 
 							<input type='hidden' name='id' id='id' value='<?php echo $id; ?>' />
 							<input type='hidden' name='beingdragged' id='beingdragged' value='' />
-							<input type='hidden' name='popovercheck[order]' id='in-positive-rules' value='<?php echo esc_attr($popover_check['order']); ?>' />
+							<input type='hidden' name='popovercheck[order]' id='in-positive-rules' value='<?php echo esc_attr($popover_check['order'] ?? ''); ?>' />
 
 						<div id='edit-popover' class='popover-holder-wrap'>
 							<div class='sidebar-name no-movecursor'>

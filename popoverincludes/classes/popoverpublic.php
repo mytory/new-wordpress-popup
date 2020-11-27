@@ -92,7 +92,7 @@ if(!class_exists('popoverpublic')) {
 		}
 
 		function get_active_popovers() {
-			$sql = $this->db->prepare( "SELECT * FROM {$this->popover} WHERE popover_active = 1 ORDER BY popover_order ASC", '' );
+			$sql = "SELECT * FROM {$this->popover} WHERE popover_active = 1 ORDER BY popover_order ASC";
 
 			return $this->db->get_results( $sql );
 		}
@@ -289,6 +289,9 @@ if(!class_exists('popoverpublic')) {
         }
 
 		function sanitise_array($arrayin) {
+			if (!is_array($arrayin)) {
+				return $arrayin;
+			}
 
 			foreach( (array) $arrayin as $key => $value) {
 				$arrayin[$key] = htmlentities(stripslashes($value) ,ENT_QUOTES, 'UTF-8');
