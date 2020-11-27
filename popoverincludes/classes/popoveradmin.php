@@ -214,8 +214,8 @@ if(!class_exists('popoveradmin')) {
 					$back = $_POST['popoverbackground'];
 					$fore = $_POST['popoverforeground'];
 
-					if($back == '') $back = 'FFFFFF';
-					if($fore == '') $fore = '000000';
+					if($back == '') $back = '#7a0039';
+					if($fore == '') $fore = '#ffffff';
 
 					$updateoption('popover_colour', array("back" => $back, "fore" => $fore));
 				}
@@ -915,9 +915,9 @@ if(!class_exists('popoveradmin')) {
 			$popover_content = stripslashes($popover->popover_content);
 
 			if(empty($popover->popover_settings)) {
-				$popover->popover_settings = array(	'popover_size'		=>	array('width' => '500px', 'height' => '200px'),
+				$popover->popover_settings = array(	'popover_size'		=>	array('width' => '400px', 'height' => '500px'),
 													'popover_location'	=>	array('left' => '100px', 'top' => '100px'),
-													'popover_colour'	=>	array('back' => 'FFFFFF', 'fore' => '000000'),
+													'popover_colour'	=>	array('back' => '#7a0039', 'fore' => '#ffffff'),
 													'popover_margin'	=>	array('left' => '0px', 'top' => '0px', 'right' => '0px', 'bottom' => '0px'),
 													'popover_check'		=>	array(),
 													'popover_ereg'		=>	'',
@@ -1484,7 +1484,7 @@ if(!class_exists('popoveradmin')) {
 					$back = $_POST['popoverbackground'];
 					$fore = $_POST['popoverforeground'];
 
-					if($back == '') $back = '#000000';
+					if($back == '') $back = '#7a0039';
 					if($fore == '') $fore = '#ffffff';
 
 					$updateoption('popover_colour', array("back" => $back, "fore" => $fore));
@@ -1517,7 +1517,7 @@ if(!class_exists('popoveradmin')) {
 			$popover_content = stripslashes($getoption('popover_content', ''));
 			$popover_size = $getoption('popover_size', array('width' => '500px', 'height' => '200px'));
 			$popover_location = $getoption('popover_location', array('left' => '100px', 'top' => '100px'));
-			$popover_colour = $getoption('popover_colour', array('back' => 'FFFFFF', 'fore' => '000000'));
+			$popover_colour = $getoption('popover_colour', array('back' => '#7a0039', 'fore' => '#ffffff'));
 			$popover_margin = $getoption('popover_margin', array('left' => '0px', 'top' => '0px', 'right' => '0px', 'bottom' => '0px'));
 
 			$popover_size = $this->sanitise_array($popover_size);

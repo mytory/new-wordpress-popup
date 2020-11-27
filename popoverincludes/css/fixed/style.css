@@ -54,13 +54,11 @@ div.nwp-msg.waiting {
 }
 
 div.nwp-msg h2 {
-	color: #000;
-	font: bold 1.3em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-	margin-top: 0px;
+	margin-top: 0;
 }
 div.nwp-msg h2 a {
-	text-decoration: none;
-	color: #000;
+	text-decoration: underline;
+	color: currentColor;
 }
 
 div.nwp-msg blockquote {
